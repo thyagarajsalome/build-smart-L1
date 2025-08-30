@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build Smart,Build Right</title>
+    <meta
+      name="description"
+      content="India's most accurate construction cost calculator. Get instant estimates for your dream home - completely free. Used by 10,000+ homeowners nationwide."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      /* ---------- your CSS kept as-is (same as what you pasted) ---------- */
+      /* I've kept everything exactly as in your provided CSS */
+      /* -------------------- Global Styles -------------------- */
+      :root {
+        --primary: #23b38f;
+        --primary-light: #1e9e7e;
+        --secondary: #5bb8e0;
+        --dark: #0f172a;
+        --light: #f8fafc;
+        --gray: #64748b;
+        --gradient: linear-gradient(135deg, #2563eb, #0ea5e9);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto";
+        background: var(--light);
+        color: var(--dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+        color: var(--dark);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      p {
+        color: var(--gray);
+        margin-bottom: 1rem;
+      }
+
+      .gradient-text {
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* -------------------- Header -------------------- */
+      .header {
+        position: sticky;
+        top: 0;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        z-index: 1000;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--primary);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+      }
+
+      .nav-menu a {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      .nav-menu a:hover {
+        color: var(--primary);
+      }
+
+      /* -------------------- Hero -------------------- */
+      .hero {
+        padding: 5rem 2rem;
+        text-align: center;
+        background: linear-gradient(to bottom, #e0f2fe, white);
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: auto;
+      }
+
+      .cta-container {
+        margin: 2rem 0;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .cta-primary {
+        background: var(--gradient);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: 0.3s;
+      }
+
+      .cta-primary:hover {
+        opacity: 0.9;
+        transform: scale(1.05);
+      }
+
+      .cta-secondary {
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: 0.3s;
+      }
+
+      .cta-secondary:hover {
+        background: var(--primary);
+        color: white;
+      }
+
+      /* Stats */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+
+      .stat-item {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      /* -------------------- Features -------------------- */
+      .features {
+        padding: 5rem 2rem;
+        background: white;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .feature-card {
+        background: #f9fafb;
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .feature-icon {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      /* -------------------- Tools -------------------- */
+      .tools-preview {
+        padding: 5rem 2rem;
+        background: #f8fafc;
+        text-align: center;
+      }
+
+      .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .tool-preview-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+
+      .tool-preview-card:hover {
+        transform: scale(1.05);
+      }
+
+      .tool-preview-icon {
+        font-size: 2.5rem;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+      }
+
+      /* -------------------- Testimonials -------------------- */
+      .testimonials {
+        padding: 5rem 2rem;
+        background: white;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .testimonial-card {
+        background: #f1f5f9;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .quote-icon {
+        font-size: 1.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1rem;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .author-avatar {
+        background: var(--primary);
+        color: white;
+        font-weight: 600;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .author-info h4 {
+        margin: 0;
+      }
+
+      /* -------------------- Final CTA -------------------- */
+      .final-cta {
+        padding: 5rem 2rem;
+        background: var(--primary-light);
+        color: white;
+        text-align: center;
+      }
+
+      .final-cta h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .mega-cta {
+        display: inline-block;
+        margin-top: 2rem;
+        background: white;
+        color: var(--primary);
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .mega-cta:hover {
+        transform: scale(1.1);
+      }
+
+      /* -------------------- Footer -------------------- */
+      .footer {
+        padding: 2rem;
+        background: #0f172a;
+        color: white;
+        text-align: center;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .social-link {
+        color: white;
+        font-size: 1.2rem;
+        transition: 0.3s;
+      }
+
+      .social-link:hover {
+        color: var(--primary-light);
+      }
+
+      /* -------------------- Animations -------------------- */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+      .jion,
+      p {
+        color: var(--dark);
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+      <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav-container">
+        <a href="#" class="logo">
+          <i class="fas fa-calculator"></i>
+          ToolWebsite
+        </a>
+        <ul class="nav-menu">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#tools">Tools</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content fade-in">
+        <h1>
+          Build Smarter, Live Better
+          <span class="gradient-text">With Cost-Effective Design</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          India's most trusted construction cost calculator. Get instant,
+          accurate estimates for your entire project - from foundation to
+          finishing touches.
+        </p>
+
+        <div class="cta-container">
+          <a href="https://toolwebsite.in/" class="cta-primary pulse">
+            Start Calculating Now
+            <i class="fas fa-rocket"></i>
+          </a>
+          <a href="#features" class="cta-secondary">
+            Learn More
+            <i class="fas fa-chevron-down"></i>
+          </a>
+        </div>
+
+        <div class="stats">
+          <div class="stat-item fade-in">
+            <span class="stat-number">10,000+</span>
+            <span class="stat-label">Happy Homeowners</span>
+          </div>
+          <div class="stat-item fade-in">
+            <span class="stat-number">₹50Cr+</span>
+            <span class="stat-label">Projects Planned</span>
+          </div>
+          <div class="stat-item fade-in">
+            <span class="stat-number">8+</span>
+            <span class="stat-label">Specialized Tools</span>
+          </div>
+          <div class="stat-item fade-in">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Free Forever</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="features-container">
+        <h2 class="fade-in">Why Choose Our Calculator?</h2>
+        <div class="features-grid">
+          <!-- feature cards (already in your code) -->
+          <div class="feature-card fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Location-Specific Pricing</h3>
+            <p>
+              Get accurate costs based on your city's current market rates. Our
+              database covers 500+ Indian cities with real-time price updates.
+            </p>
+          </div>
+
+          <div class="feature-card fade-in">
+            <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>Detailed Breakdowns</h3>
+            <p>
+              See exactly where every rupee goes. From cement to labor costs,
+              get transparent estimates for informed decision-making.
+            </p>
+          </div>
+
+          <div class="feature-card fade-in">
+            <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+            <h3>Mobile-First Design</h3>
+            <p>
+              Calculate costs anywhere, anytime. Our responsive tools work
+              perfectly on your smartphone, tablet, or desktop.
+            </p>
+          </div>
+
+          <div class="feature-card fade-in">
+            <div class="feature-icon"><i class="fas fa-download"></i></div>
+            <h3>Export & Save Reports</h3>
+            <p>
+              Download detailed PDF estimates to share with contractors, banks,
+              or family. Keep your calculations organized and accessible.
+            </p>
+          </div>
+
+          <div class="feature-card fade-in">
+            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3>Expert Verified</h3>
+            <p>
+              Our calculations are validated by civil engineers and construction
+              professionals with 15+ years of experience.
+            </p>
+          </div>
+
+          <div class="feature-card fade-in">
+            <div class="feature-icon"><i class="fas fa-clock"></i></div>
+            <h3>Instant Results</h3>
+            <p>
+              No waiting, no signup required. Get your construction estimate in
+              under 2 minutes with our lightning-fast calculators.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Preview -->
+    <section class="tools-preview" id="tools">
+      <div class="tools-container">
+        <h2 class="fade-in">Complete Construction Planning Suite</h2>
+        <p class="tools-subtitle fade-in">
+          Everything you need to plan, budget, and execute your construction
+          project
+        </p>
+
+        <div class="tools-grid">
+          <!-- tool cards (already in your code) -->
+          <div
+            class="tool-preview-card fade-in"
+            onclick="window.open('https://toolwebsite.in/', '_blank')"
+          >
+            <div class="tool-preview-icon"><i class="fas fa-home"></i></div>
+            <h3>House Construction</h3>
+            <p>Complete cost breakdown for your entire home</p>
+          </div>
+
+          <div
+            class="tool-preview-card fade-in"
+            onclick="window.open('https://toolwebsite.in/', '_blank')"
+          >
+            <div class="tool-preview-icon"><i class="fas fa-hammer"></i></div>
+            <h3>Material & Labour</h3>
+            <p>Detailed estimates for materials and workforce</p>
+          </div>
+
+          <div
+            class="tool-preview-card fade-in"
+            onclick="window.open('https://toolwebsite.in/', '_blank')"
+          >
+            <div class="tool-preview-icon"><i class="fas fa-th"></i></div>
+            <h3>Floor & Wall Tiles</h3>
+            <p>Calculate tiling costs with precision</p>
+          </div>
+
+          <div
+            class="tool-preview-card fade-in"
+            onclick="window.open('https://toolwebsite.in/', '_blank')"
+          >
+            <div class="tool-preview-icon">
+              <i class="fas fa-paint-roller"></i>
+            </div>
+            <h3>Paint Calculator</h3>
+            <p>Estimate paint quantities and visualize colors</p>
+          </div>
+
+          <div
+            class="tool-preview-card fade-in"
+            onclick="window.open('https://toolwebsite.in/', '_blank')"
+          >
+            <div class="tool-preview-icon"><i class="fas fa-faucet"></i></div>
+            <h3>Plumbing Estimator</h3>
+            <p>Plan your entire plumbing system costs</p>
+          </div>
+
+          <div
+            class="tool-preview-card fade-in"
+            onclick="window.open('https://toolwebsite.in/', '_blank')"
+          >
+            <div class="tool-preview-icon"><i class="fas fa-bolt"></i></div>
+            <h3>Electrical Estimator</h3>
+            <p>Complete electrical layout and cost planning</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 3rem">
+          <a href="https://toolwebsite.in/" class="cta-primary">
+            Access All Tools Free
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+      <div class="testimonials-container">
+        <h2 class="fade-in">Trusted by Thousands</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card fade-in">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p class="testimonial-text">
+              "Saved me ₹3 lakhs by identifying overpriced quotes from
+              contractors. The estimates were spot-on with actual costs!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">RS</div>
+              <div class="author-info">
+                <h4>Rajesh Sharma</h4>
+                <p>Homeowner, Mumbai</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p class="testimonial-text">
+              "As a first-time builder, I was clueless. This tool gave me
+              clarity and confidence. Couldn't have planned my home without it!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">PK</div>
+              <div class="author-info">
+                <h4>Pooja Kapoor</h4>
+                <p>First-time Builder, Delhi</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p class="testimonial-text">
+              "I recommend this calculator to all my clients. Accurate, easy,
+              and saves everyone a lot of time during planning."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">VK</div>
+              <div class="author-info">
+                <h4>Vikram Kumar</h4>
+                <p>Contractor, Bangalore</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+      <div class="cta-content fade-in">
+        <h2>Ready to Start Building Smarter?</h2>
+        <p class="join">
+          Join 10,000+ Indians who have already used our calculators to save
+          money and build confidently.
+        </p>
+        <a href="https://toolwebsite.in/" class="mega-cta">
+          Try It Free <i class="fas fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <!-- JavaScript for animations -->
+    <script>
+      // Fade-in on scroll
+      const fadeEls = document.querySelectorAll(".fade-in");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      fadeEls.forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
